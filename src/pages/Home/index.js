@@ -16,6 +16,7 @@ export default function Home() {
   const {loading, gifs}= useGifs()
   console.log()
   console.log(gifs)
+  consolo.log('pepepepep')
   console.log('pep')
   
  

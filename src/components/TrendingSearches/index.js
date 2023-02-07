@@ -1,13 +1,27 @@
-import React, {useState,useEffect} from "react";
-import getTendringTerms from "services/GetTrendTermsService";
-import Category from "components/Category";
+import React, {Suspense} from 'react';
+import useNearScreen from "hooks/useNearScreen";
+import Spinner from 'components/Spinner';
+
+const TrendingSearches = React.lazy(
+    () => import("./TrendingSearches")
+)
+
+
+export default function LazyTrending(){
+   
+   
+    // REF CAJA MAGICA, QUE NO SE RENDERISA NUEVAMENTE CUANDO SE OBTIENE LA REFERENCIA
  
+    const {isNearScreen,fromRef}= useNearScreen({distance: '100px'})
 
-export default function TrendingSearches(){
-    const [trends,setTrends]= useState([])
 
-    useEffect(function() {
-    getTendringTerms().then(setTrends)
-    },[])
-    return <Category  name= 'Tendencias' options={trends}/>
+    
+
+return <div ref={fromRef}>
+    <Suspense fallback={<Spinner/>} >
+    { isNearScreen ? <TrendingSearches/> : null }
+    
+    </Suspense>
+     </div>
+
 }

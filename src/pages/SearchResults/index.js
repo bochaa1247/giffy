@@ -6,27 +6,12 @@ import  {useGifs} from './../../hooks/useGifs'
 
 export default function SearchResults({params}){
 const {keyword} = params  
-const {loading, gifs} = useGifs({keyword})
+const {loading, gifs,setPage} = useGifs({keyword})
 
-
-
-
-
-/*
-const [loading ,setLoading] = useState(false)
-
-const [gifs, setGifs] = useState([])
-
-useEffect(function ()  {
-  setLoading(true)
-  getGifs({keyword:'lemon'})
-  .then(gifs =>{
-    setGifs(gifs)
-    setLoading(false)
-  })
-}, [keyword])
-*/
-
+const handleNextPage = ()=>{
+  setPage(prevPage=> prevPage + 1)
+ }
+ 
 return <>
   {loading
   ? <Spinner />
@@ -35,7 +20,8 @@ return <>
     <ListOfGifs gifs={gifs} />
    </>
   }
-  
+  <br />
+  <button className="" onClick={handleNextPage} > Get Next Page </button>
 </>
 }
 

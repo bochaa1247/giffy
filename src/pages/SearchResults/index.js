@@ -1,6 +1,6 @@
 
 import Spinner from './../../components/Spinner'
-import ListOfGifs from './../../components/ListofGifs'
+import ListOfGifs from '../../components/ListofGifs/ListofGifs'
 
 import  {useGifs} from './../../hooks/useGifs'
 

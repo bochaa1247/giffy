@@ -1,6 +1,6 @@
 import React, {useState , useEffect}  from "react"
 import { Link, useLocation } from "wouter"
-import ListOfGifs from "components/ListofGifs"
+import ListOfGifs from "components/ListofGifs/ListofGifs"
 import getGifs  from "./../../services/getGifs"
 import { useGifs } from "hooks/useGifs"
 // import TrendingSearches from 'components/TrendingSearches'

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import getGifs from './services/getGifs'
 import './App.css';
-import ListOfGifs from './components/ListofGifs';
+import ListOfGifs from './components/ListofGifs/ListofGifs';
 import {Link ,Route } from "wouter";
 import SearchResults from './pages/SearchResults';
 import Home from './pages/Home';
